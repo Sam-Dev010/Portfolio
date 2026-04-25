@@ -1,0 +1,104 @@
+---
+const personalImageAlt = "Samuel Molina";
+import Badge from "@/components/Badge.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import ProfileCheck from "./icons/ProfileCheck.astro";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/me.jpg"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/samuel-david-molina-gomez-72499b33b"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h3
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white typewriter"
+  >
+    <span class="typewriter-text">Hey, soy Samuel</span>
+    <span class="cursor"></span>
+  </h3>
+
+  <style>
+    :root {
+      --caret-color: #000;
+    }
+    html.dark {
+      --caret-color: #fff;
+    }
+
+    .typewriter {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+      padding-bottom: 0.1em;
+      overflow: hidden;
+    }
+
+    .typewriter-text {
+      animation: typing 3.5s steps(20, end) forwards;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 0.15em;
+      height: 1em;
+      margin-left: 2px;
+      background: var(--caret-color);
+      animation: caret-pulse 1.5s infinite;
+      animation-delay: 4s;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 15ch;
+      }
+    }
+
+    @keyframes caret-pulse {
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+      50% {
+        transform: scaleY(0.3);
+      }
+    }
+  </style>
+
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    2 años de experiencia en desarrollo de aplicaciones, Estudiante de Desarrollo
+    de Software de Barranquilla, Colombia.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:samueldavidmolina2007@gmail.com">
+      <MailIcon class="size-4" /> Contáctame
+    </SocialPill>
+    <SocialPill href="https://github.com/Sam-Dev0">
+      <GitHubIcon class="size-4" /> GitHub
+    </SocialPill>
+    <SocialPill href="/CV_Samuel.pdf" target="_blank" rel="noopener noreferrer">
+      <ProfileCheck class="size-4" /> CV
+    </SocialPill>
+  </nav>
+</div>
